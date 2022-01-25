@@ -1,0 +1,95 @@
+/* things that i learned:-
+avoid using position absolute in every elements as it removes the element from the normal flow of the document.
+- if the element is div inside a wrapper use .wrapper *space* .div input
+not .wrapper.div input it operates only when the  next div is just the next one from it not anyother.
+-here every keys div has its own width and are centered horizontally using display flex.
+-here mainly the box shadows were used very efficiently. and got familiar with the box shadow inset property where the shadows are form inside and the horizontal shadow vertical blurr and spread property was known.
+-got to know about the textarea element in the html.
+-also learned to horizontally center a div as when the div's height or width is not labelled then we can just center the div's content horizontally as the key's div were to be centered so they were dispalayed as flexbox and then horizontally centered.
+
+*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+
+.container{
+    width: 60%;
+}
+
+.wrapper{
+    min-width: 750px;
+    max-width: 1000px;
+    padding: 25px;
+    border-radius: 10px;
+    
+    background: #131419;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5),
+      -3px -3px 7px rgba(255, 255, 255, 0.05);
+}
+
+.wrapper.display{
+    margin-bottom: 20px;
+}
+
+.display textarea{
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  background: #131419;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5),
+  inset -3px -3px 7px rgba(255, 255, 255, 0.05) ;
+  border-radius: 10px;
+  resize: none;
+  color: white;
+  font-size: 20px;
+}
+
+.wrapper .keys{  
+    /* sdont forget to give space between .wrapper "space" .keys */
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper .keys input{
+    height: 50px;
+  min-width: 50px;
+  padding: 10px;
+  border: none;
+  outline: none;
+
+  background: #131419;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5),
+    -3px -3px 7px rgba(255, 255, 255, 0.05);
+  margin: 10px;
+  color: #c7c7c7;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: default;
+}
+
+.wrapper .keys input:focus{
+    font-size: 19px;
+    color: lawngreen;
+}
+.wrapper .keys input[value=" "]{
+    width: 60%;
+}
+
+.wrapper .keys input[class="inset"]{
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5),
+    inset -3px -3px 7px rgba(255, 255, 255, 0.05) ;
+}
